@@ -1,0 +1,8 @@
+Installed :
+
+Node.js
+Library Dependencies (Command npm install) :
+
+Express
+Mongoose
+Body Parser
