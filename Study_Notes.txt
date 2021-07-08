@@ -1,8 +1,17 @@
-Installed :
-
 Node.js
-Library Dependencies (Command npm install) :
+  Purpose : The runtime environment for Javascript.
 
-Express
-Mongoose
-Body Parser
+Dependencies (Command npm install) :
+  1. Express
+    Purpose : Framework for Node.js for creating Web Application. Establishes server?
+  2. Mongoose
+    Purpose : Library that simplifies commands for using MongoDB, such as connecting to the DB.
+  3. Body Parser
+    Purpose : When the client puts together a bunch of info and throws that at the server, there needs
+    to be some way to reorganize that and make it into a req.body. Body parser achieves that
+    
+External Resources :
+  1. Postman
+    Purpose : Used for testing when the server is established, but the client isn't. In this case,
+    there's not a good way to find out if the DB addition actually succeeded or not, so we use
+    Postman to receive details on success or failure.
