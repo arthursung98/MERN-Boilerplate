@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt')
+const saltRounds = 10
+
 
 const userSchema = mongoose.Schema({
     name: {
@@ -28,6 +31,30 @@ const userSchema = mongoose.Schema({
     },
     tokenExp: {
         type: Number
+    }
+})
+
+userSchema.pre('save', function(next) {
+    // Encrypting the password
+    var user = this;
+
+    // Only when changing the password!
+    if(user.isModified('password')) {
+        bcrypt.genSalt(saltRounds, function(err, salt) {
+            // Generating the salt
+            if(err) return next(err)
+    
+            // With the generated salt, create a hash which is the encrypted password
+            bcrypt.hash(user.password, salt, function(err, hash) {
+                // Replace the current password with hash, and send
+                // to next.
+                if(err) return next(err)
+                user.password = hash
+                next()
+            });
+        });
+    } else {
+        next()
     }
 })
 

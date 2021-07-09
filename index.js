@@ -28,6 +28,9 @@ app.post('/register', (req, res) => {
 
     const user = new User(req.body)
 
+    
+
+
     // .save is a method from MongoDB, which inputs the data into the DB.
     user.save((err, doc) => {
       if(err) return res.json({success: false, err})

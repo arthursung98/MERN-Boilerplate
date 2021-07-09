@@ -21,6 +21,9 @@ Dependencies (Command npm install) :
     for that change to be applied, we have to shut down the server and completely restart it again by using
     npm run start. Instead of this, Node Mon detects when the server needs rebooting, and automates that
     process.
+  5. Bcrypt
+    Command : npm install Bcrypt --save
+    Purpose : Encryption of passwords so that the input doesn't go directly to the DB. This will
     
 External Resources :
   1. Postman
