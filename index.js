@@ -4,12 +4,14 @@ const port = 5000
 const bodyParser = require('body-parser')
 const { User } = require("./models/User")
 
+const config = require('./config/key')
+
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 
 // Connecting MongoDB using mongoose
 const mongoose = require('mongoose')
-mongoose.connect('mongodb+srv://arthursung98:wasp0810@reactproject.q4zeq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect(config.mongoURI, {
     useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
 }).then(() => console.log('MongoDB Connected!'))
   .catch(err => console.log(err))  
@@ -17,7 +19,7 @@ mongoose.connect('mongodb+srv://arthursung98:wasp0810@reactproject.q4zeq.mongodb
 
 app.get('/', (req, res) => {
     // This is the response that is sent to the client when the url is /, or route
-  res.send('Hello World!')
+  res.send('Hello World!\nTesting NodeMon!')
 })
 
 app.post('/register', (req, res) => {

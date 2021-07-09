@@ -3,15 +3,32 @@ Node.js
 
 Dependencies (Command npm install) :
   1. Express
+    Command : npm install express --save 
+            (--save automatically adds it to the Dependencies.)
     Purpose : Framework for Node.js for creating Web Application. Establishes server?
   2. Mongoose
+    Command : npm install mongoose --save
     Purpose : Library that simplifies commands for using MongoDB, such as connecting to the DB.
   3. Body Parser
+    Command : npm install body-parser --save
     Purpose : When the client puts together a bunch of info and throws that at the server, there needs
     to be some way to reorganize that and make it into a req.body. Body parser achieves that
+  4. Node Mon
+    Command : npm install nodemon --save-dev
+            (--dev declares that we will use nodemon ONLY during development. 
+            eg, not in distrubution or production.)
+    Purpose : Say we made some changes in the document where we print a different statement. But, in order
+    for that change to be applied, we have to shut down the server and completely restart it again by using
+    npm run start. Instead of this, Node Mon detects when the server needs rebooting, and automates that
+    process.
     
 External Resources :
   1. Postman
-    Purpose : Used for testing when the server is established, but the client isn't. In this case,
-    there's not a good way to find out if the DB addition actually succeeded or not, so we use
-    Postman to receive details on success or failure.
+    Purpose : Used for testing when the server is established, but the client isn't. In this case, 
+    there is no possible way to send a request to a server or receive a response.
+    So, Postman takes on the role of the client for the moment.
+  2. gitignore
+    Purpose : There are many library dependencies in the project as well as security information like
+    MongoDB username & password. To prevent all these extra stuff and confidential information from 
+    going onto Github, you can use gitignore and config. Add allthe files that have confidential info
+    into the gitignore file after you're done.
