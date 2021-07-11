@@ -1,0 +1,13 @@
+React.js
+  Purpose : Frontend framework.
+
+Concepts:
+    1. Real DOM vs. Virtual DOM (Document Object Model)
+        Virtual DOM only has to reload items that have been updated / changed.
+
+Dependencies & Libraries :
+    1. Downloading React
+
+External Resources :
+
+Logic :

@@ -57,4 +57,8 @@ Logic :
 7. When Login is successful, create token and save in cookie.
 8. Authentification process using token saved in the cookie.
     8.1 First, get the token saved in the cookie from Server
-    8.2 Decode the token, which outputs the userId
+    8.2 Use the token to find whether the user exists in the DB.
+    8.3 If the user exists, input the information into this.user and send it back to request.
+9. Logout fucntion.
+10. All that needs to happen is delete the token from the DB, because accounts not logged in
+    dont have Tokens. Now Login is live.
