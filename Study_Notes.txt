@@ -1,11 +1,12 @@
 Node.js
   Purpose : The runtime environment for Javascript.
 
-Dependencies (Command npm install) :
+Dependencies & Libraries :
   1. Express
     Command : npm install express --save 
             (--save automatically adds it to the Dependencies.)
-    Purpose : Framework for Node.js for creating Web Application. Establishes server?
+    Purpose : Framework for Node.js for creating Web Application. Node.js is simply a Javascript
+    runtime environment, while Express is designed specifically for backend operations.
   2. Mongoose
     Command : npm install mongoose --save
     Purpose : Library that simplifies commands for using MongoDB, such as connecting to the DB.
@@ -24,6 +25,13 @@ Dependencies (Command npm install) :
   5. Bcrypt
     Command : npm install Bcrypt --save
     Purpose : Encryption of passwords so that the input doesn't go directly to the DB. This will
+  6. JSON Webtoken
+    Command : npm install jsonwebtoken --save
+    Purpose : Used during the Login phase, when user credentials are all correct, we need to create a token
+    to identify which account we're dealing with using JSON webtoken.
+  7. Cookie Parser
+    Command : npm install cookieparser --save
+    Purpose : In order to save the Token that we created using JSON Webtoken in the cookie.
     
 External Resources :
   1. Postman
@@ -35,3 +43,18 @@ External Resources :
     MongoDB username & password. To prevent all these extra stuff and confidential information from 
     going onto Github, you can use gitignore and config. Add allthe files that have confidential info
     into the gitignore file after you're done.
+  3. Killing Server
+    netstat -ano | findstr :<PORT>
+    taskkill /PID <PID> /F
+
+Logic :
+1. Server Establishment
+2. Test if server is connected thru GET request
+3. DB Connection
+4. Since DB is connected, Register function
+5. To register the user info with the right structure, need a User.js - Model (MVC)
+6. Login function.
+7. When Login is successful, create token and save in cookie.
+8. Authentification process using token saved in the cookie.
+    8.1 First, get the token saved in the cookie from Server
+    8.2 Decode the token, which outputs the userId
