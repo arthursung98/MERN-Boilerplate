@@ -3,11 +3,27 @@ React.js
 
 Concepts:
     1. Real DOM vs. Virtual DOM (Document Object Model)
-        Virtual DOM only has to reload items that have been updated / changed.
+        : Virtual DOM only has to reload items that have been updated / changed.
+    2. Webpack
+        : combines complex modules(due to modern websites being very complex) into simple HTML, CSS & JS
+          Pictures should be placed under the /src folder for the webpack to do its job, not the public
+          file.
+    3. npm vs. npx
+        : NPM = Node Package Manager. A command line utility for interacting with package installations,
+          version management, and dependency managements. The package.json file summarizes all of what
+          npm does. Most packages are downloaded locally into node_modules.
+          NPX = Borrowing stuff in Node without having to download globally to the local machine.
+          Disk space saved, and we use the latest version.
 
 Dependencies & Libraries :
     1. Downloading React
+        Command : npx create-react-app .
+    2. Turning on the React App
+        Command : npm run start
+
 
 External Resources :
 
-Logic :
+React App Structure :
+    Ex) In index.js => <React.StrictMode><App /></React.StrictMode>, document.getElementById('root')
+    We get the element that has the Id 'root', and show <App/> on that element.
