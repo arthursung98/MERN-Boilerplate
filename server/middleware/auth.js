@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 let auth = (req, res, next) => {
     // Where we process the authentification logic.
     // 1. Get the token from Client Cookie.
-    let token = req.cookie.x_auth
+    let token = req.cookies.x_auth
 
     // 2. Decode the token, and find the user.
     User.findByToken(token, (err, user) => {

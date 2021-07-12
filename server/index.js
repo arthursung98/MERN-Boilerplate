@@ -64,8 +64,9 @@ app.post('/api/users/login', (req, res) => {
 
         // Save the token to where? Cookie, or local storage. Still debated in industry.
         // We are basically saving the user.token as the name "x_auth"
-        res.cookie("x_auth", user.token).status(200)
-        .json({loginSuccess:true, userId: user._id, token: user.token})
+        res.cookie("x_auth", user.token)
+          .status(200)
+          .json({loginSuccess:true, userId: user._id, token: user.token})
       })
     })
   })
