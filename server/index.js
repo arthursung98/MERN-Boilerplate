@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const port = 5000
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 const { User } = require("./models/User")
@@ -24,6 +23,12 @@ app.get('/', (req, res) => {
     // This is the response that is sent to the client when the url is /, or route
   res.send('Hello World!\nTesting NodeMon!')
 })
+
+app.get('/api/hello', (req, res) => {
+  res.send("Frontend React Testing")
+})
+
+
 
 app.post('/api/users/register', (req, res) => {
   // Recieve information from the client needed for Sign Up,
@@ -100,6 +105,8 @@ app.get('/api/users/logout', auth , (req, res) => {
   })
 })
 
+// Setup Server on port #5000.
+const port = 5000
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })

@@ -14,15 +14,42 @@ Concepts:
           npm does. Most packages are downloaded locally into node_modules.
           NPX = Borrowing stuff in Node without having to download globally to the local machine.
           Disk space saved, and we use the latest version.
+    4. CORS(Cross Origin Resource Sharing) Issue, Proxy Solution
+        : If the backend server & the frontend are using different ports, i.e. 3000 vs 5000, then
+          requests cannot be sent to each other without special settings.
+          How to solve ?
+          Set the Proxy manually. See section 4 in Dependencies & Libraries
+
+Grammar:
+    1. Import
+        1.1 Must import React from 'react';
+        1.2 Must import Router DOM by
+        import {
+            BrowserRouter as Router,
+            Switch,
+            Route,
+            Link
+        } from "react-router-dom";
+    2. Router
+        2.1 When using <Route ... component={ ... } />, must specify with 'exact path'
+
 
 Dependencies & Libraries :
-    1. Downloading React
+    1. Downloading (Kind of) React
         Command : npx create-react-app .
     2. Turning on the React App
         Command : npm run start
-
-
-External Resources :
+    3. React Router DOM
+        Command : npm react-router-dom --save & import the package
+    4. Axios
+        Command : npm install axios --save
+        Purpose : Neccessary when sending requests to the server / DB thru React
+    5. Proxy Middleware
+        Command : npm install http-proxy-middleware --save
+                  Then, create setupProxy.js in the src file.
+                  In the setupProxy file, specify which port number to set proxy to.
+        Purpose :
+    
 
 React App Structure :
     Ex) In index.js => <React.StrictMode><App /></React.StrictMode>, document.getElementById('root')
