@@ -14,12 +14,35 @@ Concepts:
           npm does. Most packages are downloaded locally into node_modules.
           NPX = Borrowing stuff in Node without having to download globally to the local machine.
           Disk space saved, and we use the latest version.
-    4. CORS(Cross Origin Resource Sharing) Issue, Proxy Solution
+    4. CORS(Cross Origin Resource Sharing) Issue
         : If the backend server & the frontend are using different ports, i.e. 3000 vs 5000, then
           requests cannot be sent to each other without special settings.
           How to solve ?
           Set the Proxy manually. See section 4 in Dependencies & Libraries
-
+    5. Proxy Server
+        : Randomizes the IP address between the user and the internet. Couple of security strengths
+          such as Firewalls & Webfilters.
+    6. Redux
+        : A predictable state container for JS apps. Redux stores the state changes in one hub so that
+          each component can just access that hub to apply changes. What is a state ??
+        Props vs. State
+            6.1 Props
+            : Shorthand for properties. In the communication between components in HTML, the parent
+              component will send down their properties to the child element. Prperties are immutable.
+            6.2 State
+            : If we just want to send data within the component, use the State. States are mutable
+              and is re-rendered when changed.
+        Data Flow:
+            1. Action
+                : Starts from the React Component, and describes what changes happened thru a plain 
+                  object.
+            2. Reducer
+                : Gets the previous state & the action object and returns the next state.
+                  Reducers are pure functions!
+            3. Store
+                : Sotre holds the whole state tree. The only way to change the state inside is to
+                  dispatch an action on it.
+            
 Grammar:
     1. Import
         1.1 Must import React from 'react';
@@ -48,7 +71,24 @@ Dependencies & Libraries :
         Command : npm install http-proxy-middleware --save
                   Then, create setupProxy.js in the src file.
                   In the setupProxy file, specify which port number to set proxy to.
+        Purpose : Reroutes the requests so that the request sent from the frontend,
+                  i.e. Port #3000, can be used by port #5000 on the backend.
+    6. Concurrently
+        Command : npm install concurrently --save
+                  Then, write in package.json
+                    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\" "
+        Purpose : Instead of having to run two terminals to power up the backend &
+                  frontend, we can start both at the same time.
+    7. CSS Framwork - Ant Design
+        Command : npm install antd --save
+        Purpose: To spend less time working on the design and focus on the functions of the program.
+    8. Redux Dependencies
+        Command : npm install redux react-redux redux-promise redux-thunk --save
         Purpose :
+            1. Middleware - redux promise & redux thunk
+                : The only way to change the Store is thru a dispatch, and only accepts objects.
+                  But sometimes Store receives a promise or a function. These middleware "teaches"
+                  dispatch how to accept these inputs that vary from expected behavior.
     
 
 React App Structure :

@@ -24,11 +24,10 @@ app.get('/', (req, res) => {
   res.send('Hello World!\nTesting NodeMon!')
 })
 
+// Testing frontend connection with React. See LandingPage.js for details
 app.get('/api/hello', (req, res) => {
-  res.send("Frontend React Testing")
+  res.json({success: true, message: "Frontend successfully connection to Server!"})
 })
-
-
 
 app.post('/api/users/register', (req, res) => {
   // Recieve information from the client needed for Sign Up,
