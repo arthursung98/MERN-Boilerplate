@@ -42,6 +42,15 @@ Concepts:
             3. Store
                 : Sotre holds the whole state tree. The only way to change the state inside is to
                   dispatch an action on it.
+    7. React - Class Component vs. Functional Components
+        7.1 Class Components
+            : can provide more features, but uses longer & more complex code. Slower performance.
+              Only class components were able to deal with Render phase & commit phase, so
+              most of the time Class components were used. Until React Hooks.
+        7.2 Functional Components
+            : less features, uses shorter & simpler code. Faster performance.
+    8. React Hooks
+        : Allows Fucntional Components to deal with render phase & commit phase
             
 Grammar:
     1. Import
@@ -63,7 +72,7 @@ Dependencies & Libraries :
     2. Turning on the React App
         Command : npm run start
     3. React Router DOM
-        Command : npm react-router-dom --save & import the package
+        Command : npm install eact-router-dom --save & import the package
     4. Axios
         Command : npm install axios --save
         Purpose : Neccessary when sending requests to the server / DB thru React
@@ -84,6 +93,7 @@ Dependencies & Libraries :
         Purpose: To spend less time working on the design and focus on the functions of the program.
     8. Redux Dependencies
         Command : npm install redux react-redux redux-promise redux-thunk --save
+            Then use <Provider /> in index.js
         Purpose :
             1. Middleware - redux promise & redux thunk
                 : The only way to change the Store is thru a dispatch, and only accepts objects.
