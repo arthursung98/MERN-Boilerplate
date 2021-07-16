@@ -62,6 +62,8 @@ Grammar:
             Route,
             Link
         } from "react-router-dom";
+        1.3 Must import useEffect by
+        import React, { useEffect } from 'react'
     2. Router
         2.1 When using <Route ... component={ ... } />, must specify with 'exact path'
 
@@ -104,3 +106,23 @@ Dependencies & Libraries :
 React App Structure :
     Ex) In index.js => <React.StrictMode><App /></React.StrictMode>, document.getElementById('root')
     We get the element that has the Id 'root', and show <App/> on that element.
+
+    1. Making States within .js documents
+        const [variable name - ex) email or password, setState] = useState(initialState)
+
+        Example:
+        const [Email, setEmail] = useState("")
+        <input type="email" value={Email} onChange />
+
+        When something is typed, onChange creates an event. The event then chagnes the state,
+        which is const [Email] <- this part. The changed state then updates the component value.
+        Now looks like
+
+        // **************************************************************
+        const [Email, setEmail] = useState("")
+        <input type="email" value={Email} onChange={onEmailHandler} />
+
+        const onEmailHandler = (event) => {
+            setEmail(event.currentTarget.value)
+        }
+        *************************************************************** //
