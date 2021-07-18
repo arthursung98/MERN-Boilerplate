@@ -38,8 +38,8 @@ app.post('/api/users/register', (req, res) => {
     // .save is a method from MongoDB, which inputs the data into the DB.
     // Returns whether failed or not.
     user.save((err, doc) => {
-      if(err) return res.json({success: false, err});
-      return res.status(200).json({success:true});
+      if(err) return res.json({registerSuccess: false, err});
+      return res.status(200).json({registerSuccess:true});
     })
 })
 

@@ -65,7 +65,7 @@ Grammar:
         1.3 Must import useEffect by
         import React, { useEffect } from 'react'
     2. Router
-        2.1 When using <Route ... component={ ... } />, must specify with 'exact path'
+        2.1 When using <Route exact path='/' component={ ... } />, must specify with 'exact path'
 
 
 Dependencies & Libraries :
@@ -74,7 +74,7 @@ Dependencies & Libraries :
     2. Turning on the React App
         Command : npm run start
     3. React Router DOM
-        Command : npm install eact-router-dom --save & import the package
+        Command : npm install react-router-dom --save & import the package
     4. Axios
         Command : npm install axios --save
         Purpose : Neccessary when sending requests to the server / DB thru React
@@ -104,7 +104,7 @@ Dependencies & Libraries :
     
 
 React App Structure :
-    Ex) In index.js => <React.StrictMode><App /></React.StrictMode>, document.getElementById('root')
+    Basic) In index.js => <React.StrictMode><App /></React.StrictMode>, document.getElementById('root')
     We get the element that has the Id 'root', and show <App/> on that element.
 
     1. Making States within .js documents
@@ -126,3 +126,38 @@ React App Structure :
             setEmail(event.currentTarget.value)
         }
         *************************************************************** //
+
+    2. Understanding redux operations
+        2.1. Initiate state change with an action.
+            This would look like something in the action folder.
+            // **************************************************************
+            dispatch(actionFunction(body))
+            .then(response => {
+                Business Logic
+            })
+            *************************************************************** //
+        2.2. Reduce the action into a simpler state
+            This exists in the reducer folder and is created inside the
+            // **************************************************************
+            <Provider 
+                state = {reducer, ...}>
+            </Provider>
+            *************************************************************** //
+            in index.js
+        2.3. Finally, state change applied.
+        
+    3. Authorization & Page Movement.
+        : How do we deal with situations that require autority to allow webpages
+          or block it?
+
+        2.1. HOC (Higher Order Component)
+            : This component exists above all other componenets. It is a
+              function that takes a component and returns a new component.
+              Thru this component, it checks to see if current user has the 
+              authority to enter a page, and if it does, sends to that page.
+              
+        Logic Steps
+        1. The HOC sends a requests to the backend thru 'auth.js'
+        2. The auth.js uses redux to get the current user state, including action, reducer.
+        3. The backend shoots back a response to the HOC with all the user information
+           in the specific page.
