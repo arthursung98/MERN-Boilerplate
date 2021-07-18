@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { unstable_renderSubtreeIntoContainer } from 'react-dom';
 import { useDispatch } from 'react-redux'
-import {loginUser} from '../../../_actions/userAction'
+import { loginUser } from '../../../_actions/userAction'
 
 
 function LoginPage(props) {

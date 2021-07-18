@@ -1,0 +1,8 @@
+1. Why did you use React instead of Vue or Angular?
+2. How did you hide credentials & sensitive information?
+3. What does your authorization scheme look like?
+4. How is React different from basic frontend framework?
+5. What is a React-Router?
+6. Why did you use Redux?
+7. Tell me about how actions & reducers work
+8. What is Props?
