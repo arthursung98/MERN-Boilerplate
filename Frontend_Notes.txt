@@ -55,6 +55,7 @@ Concepts:
 Grammar:
     1. Import
         1.1 Must import React from 'react';
+            Hotkey : rfce
         1.2 Must import Router DOM by
         import {
             BrowserRouter as Router,

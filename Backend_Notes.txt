@@ -23,14 +23,14 @@ Dependencies & Libraries :
     npm run start. Instead of this, Node Mon detects when the server needs rebooting, and automates that
     process.
   5. Bcrypt
-    Command : npm install Bcrypt --save
+    Command : npm install bcrypt --save
     Purpose : Encryption of passwords so that the input doesn't go directly to the DB. This will
   6. JSON Webtoken
     Command : npm install jsonwebtoken --save
     Purpose : Used during the Login phase, when user credentials are all correct, we need to create a token
     to identify which account we're dealing with using JSON webtoken.
   7. Cookie Parser
-    Command : npm install cookieparser --save
+    Command : npm install cookie-parser --save
     Purpose : In order to save the Token that we created using JSON Webtoken in the cookie.
     
 External Resources :
@@ -62,3 +62,13 @@ Logic :
 9. Logout fucntion.
 10. All that needs to happen is delete the token from the DB, because accounts not logged in
     dont have Tokens. Now Login is live.
+
+Self-Questions :
+  1. Why did you use React instead of Vue or Angular?
+  2. How did you hide credentials & sensitive information?
+  3. What does your authorization scheme look like?
+  4. How is React different from basic frontend framework?
+  5. What is a React-Router?
+  6. Why did you use Redux?
+  7. Tell me about how actions & reducers work
+  8. What is Props?
